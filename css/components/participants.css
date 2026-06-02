@@ -1,0 +1,116 @@
+.participants {
+    position: relative;
+    padding-bottom: calc(176 * var(--width-multiplier));
+}
+
+.participants .container {
+    position: relative;
+}
+
+.participants__head {
+    margin-bottom: calc(39 * var(--width-multiplier));
+}
+
+.participants__nav {
+    position: absolute;
+    left: 0;
+    bottom: calc(-76 * var(--width-multiplier));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.participants__nav-counter {
+    min-width: calc(36 * var(--width-multiplier));
+    margin: 0 calc(11 * var(--width-multiplier));
+    font-size: calc(16 * var(--width-multiplier));
+    line-height: 120%;
+    color: #838383;
+}
+
+.participants__nav-counter span {
+    color: var(--color-dark);
+}
+
+.participants__slider {
+    overflow: hidden;
+}
+
+.participants__track {
+    display: flex;
+    margin-right: calc(-20 * var(--width-multiplier));
+    padding-right: calc(20 * var(--width-multiplier));
+    transition: transform var(--transition-medium);
+}
+
+.participants__card {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: calc(21 * var(--width-multiplier));
+    text-align: center;
+}
+
+.participants__card-image {
+    margin-bottom: calc(28 * var(--width-multiplier));
+    width: calc(244 * var(--width-multiplier));
+}
+
+.participants__card-name {
+    margin-bottom: calc(8 * var(--width-multiplier));
+    font-weight: 600;
+    font-size: calc(24 * var(--width-multiplier));
+    line-height: 120%;
+}
+
+.participants__card-desc {
+    margin-bottom: calc(20 * var(--width-multiplier));
+    font-size: calc(20 * var(--width-multiplier));
+    line-height: 120%;
+    color: #838383;
+}
+
+@media (min-width: 1024px) {
+    .participants {
+        padding-bottom: calc(140 * var(--width-multiplier));
+    }
+
+    .participants__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: calc(60 * var(--width-multiplier));
+    }
+
+    .participants__nav {
+        position: static;
+        justify-content: normal;
+        margin-left: calc(30 * var(--width-multiplier));
+        width: auto;
+    }
+
+    .participants__nav-counter {
+        margin: 0 calc(13 * var(--width-multiplier));
+    }
+
+    .participants__track {
+        margin-right: 0;
+        padding-right: 0;
+        transition: transform var(--transition-slow);
+    }
+
+    .participants__card {
+        flex: 0 0 calc(33.333% - calc(13.3 * var(--width-multiplier)));
+    }
+
+    .participants__card-image {
+        margin-bottom: calc(29 * var(--width-multiplier));
+        width: calc(320 * var(--width-multiplier));
+    }
+
+    .participants__card-name {
+        margin-bottom: calc(5 * var(--width-multiplier));
+    }
+}

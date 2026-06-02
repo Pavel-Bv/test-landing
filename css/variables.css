@@ -1,0 +1,37 @@
+:root {
+    /* Цвета */
+    --color-dark: #313131;
+    --color-gray: #595653;
+    --color-white: #FFFFFF;
+    --color-black: #1F1F1F;
+    --color-red: #F54932;
+    --color-yellow: #FBCE51;
+    --color-blue: #3057A2;
+
+    /* Типография */
+    --font-main: 'GolosText', Arial, sans-serif;
+    --font-accent: 'Merriweather', Arial, serif;
+
+    /* Переходы */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.4s ease;
+    --transition-slow: 0.6s ease;
+
+    /* Ширина для резины */
+    --width-base: 1366;
+    --width-current: 100vw;
+    --width-multiplier: var(--width-current) / var(--width-base)
+}
+
+@media (max-width: 1023px) {
+    :root {
+        --width-base: 375;
+        --width-current: 100vw;
+    }
+}
+
+@media (min-width: 1366px) {
+    :root {
+        --width-current: 1366px;
+    }
+}

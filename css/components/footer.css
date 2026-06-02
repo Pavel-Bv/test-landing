@@ -1,0 +1,23 @@
+.footer {
+    position: relative;
+    padding: calc(78 * var(--width-multiplier)) 0 calc(60 * var(--width-multiplier));
+    background: #E9DED4;
+}
+
+.footer .running-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.footer__text {
+    font-size: calc(16 * var(--width-multiplier));
+    line-height: 120%;
+    color: #838383;
+}
+
+@media (min-width: 1024px) {
+    .footer {
+        padding: calc(101 * var(--width-multiplier)) 0 calc(71 * var(--width-multiplier));
+    }
+}

@@ -1,0 +1,174 @@
+/* === Анимации появлений === */
+
+/* появление снизу */
+.fade-up {
+    opacity: 0;
+    transform: translateY(calc(30 * var(--width-multiplier)));
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* появление сверху */
+.fade-down {
+    opacity: 0;
+    transform: translateY(calc(-30 * var(--width-multiplier)));
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.fade-down.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* появление слева */
+.fade-left {
+    opacity: 0;
+    transform: translateX(calc(30 * var(--width-multiplier)));
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.fade-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* простое появление */
+.fade-in {
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Задержки для каскадной анимации */
+.fade-up[data-delay="200"],
+.fade-down[data-delay="200"],
+.fade-left[data-delay="200"],
+.fade-in[data-delay="200"] { transition-delay: 0.2s; }
+
+.fade-up[data-delay="400"],
+.fade-down[data-delay="400"],
+.fade-left[data-delay="400"],
+.fade-in[data-delay="400"] { transition-delay: 0.4s; }
+
+.fade-up[data-delay="600"],
+.fade-down[data-delay="600"],
+.fade-left[data-delay="600"],
+.fade-in[data-delay="600"] { transition-delay: 0.6s; }
+
+.fade-up[data-delay="800"],
+.fade-down[data-delay="800"],
+.fade-left[data-delay="800"],
+.fade-in[data-delay="800"] { transition-delay: 0.8s; }
+
+.fade-up[data-delay="1000"],
+.fade-down[data-delay="1000"],
+.fade-left[data-delay="1000"],
+.fade-in[data-delay="1000"] { transition-delay: 1s; }
+
+/*  === Анимации фигур === */
+
+.anim-pendulum-right.animate {
+    animation: pendulumRight 3s ease-in-out infinite;
+    animation-delay: var(--anim-delay, 0.6s);
+}
+
+.anim-pendulum-left.animate {
+    animation: pendulumLeft 3s ease-in-out infinite;
+    animation-delay: var(--anim-delay, 0.6s);
+}
+
+.anim-slip-right.animate {
+    animation: slipRight 3s ease-in-out infinite;
+    animation-delay: var(--anim-delay, 0.6s);
+}
+
+.anim-slip-left.animate {
+    animation: slipLeft 3s ease-in-out infinite;
+    animation-delay: var(--anim-delay, 0.6s);
+}
+
+.anim-circle.animate {
+    animation: circle 50s linear infinite;
+    animation-delay: var(--anim-delay, 0.6s);
+}
+
+.anim-pulse.animate {
+    animation: pulse 5s linear infinite;
+    animation-delay: var(--anim-delay, 0.6s);
+}
+
+@keyframes pendulumRight {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes pendulumLeft {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes slipRight {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(calc(10 * var(--width-multiplier)));
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slipLeft {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(calc(-10 * var(--width-multiplier)));
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
